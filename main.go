@@ -249,6 +249,13 @@ func main() {
 			"message": "Hello! Thank you for using FreeDuckDuckGo. Made by Vincent Yang. Repo: https://github.com/missuo/FreeDuckDuckGo",
 		})
 	})
+	
+	r.OPTIONS("/v1/chat/completions", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "ok",
+		})
+	})
+	
 
 	r.POST("/v1/chat/completions", func(c *gin.Context) {
 		var req OpenAIRequest
